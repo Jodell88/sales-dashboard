@@ -1,0 +1,68 @@
+<headerbar>
+    <span title>{{title}}</span>
+  </headerbar>
+<br>
+<div fxLayout="row">
+  <div fxFlexOffset="5%" fxFlex="45%">
+    <form>
+      <div fxLayout="row">
+        <div fxFlex="49%">
+          <mat-form-field class="csp-full-width">
+            <mat-select multiple [(ngModel)]="model.issue" name="issuetype" placeholder="What is the reported Service Issue?">
+              <mat-option *ngFor="let serviceIssue of serviceIssues" [value]="serviceIssue.value">{{ serviceIssue.value }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxFlexAlign="center" fxFlexOffset="2%" fxFlex="49%">
+          <mat-form-field class="csp-full-width">
+            <input matInput [(ngModel)]="model.date" name="date" [matDatepicker]="myDatepicker" placeholder="Date when issue first surfaced">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+          </mat-form-field>          
+        </div>
+      </div>
+      <mat-form-field class="csp-full-width">
+        <textarea matInput matTextareaAutosize [(ngModel)]="model.iptv" name="iptv" placeholder="IPTV Only"></textarea>
+      </mat-form-field>
+      <mat-form-field class="csp-full-width">
+        <textarea matInput matTextareaAutosize [(ngModel)]="model.internet" name="internet" placeholder="Internet Only"></textarea>
+      </mat-form-field>
+      <mat-form-field class="csp-full-width">
+        <textarea matInput matTextareaAutosize [(ngModel)]="model.voice" name="voice" placeholder="Voice Only"></textarea>
+      </mat-form-field>
+      <mat-form-field class="csp-full-width">
+        <textarea matInput matTextareaAutosize [(ngModel)]="model.both" name="both" placeholder="Issues with multiple services"></textarea>
+      </mat-form-field>
+      <mat-form-field class="csp-full-width">
+        <textarea matInput matTextareaAutosize [(ngModel)]="model.info" name="info" placeholder="Additional Info"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+  <div fxFlexOffset="5%" fxFlex="44%">
+    <mat-card>
+      <mat-card-title>{{title}} Template Preview</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="csp-full-width-height">
+          <textarea #csp matInput matTextareaAutosize readonly>What is the reported Service Issue?: {{model.issue}}
+
+Date when issue first surfaced: {{model.date | date: 'mediumDate'}}
+
+IPTV Only: {{model.iptv}}
+
+Internet Only: {{model.internet}}
+
+Voice Only: {{model.voice}}
+
+Issues with multiple services: {{model.both}}
+
+Additional Info: {{model.info}}
+          </textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [ngxClipboard]='csp'>COPY</button>
+        <button mat-button (click)="reset()">CLEAR</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
