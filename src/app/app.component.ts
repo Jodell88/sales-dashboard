@@ -6,10 +6,13 @@ export class Template {
 }
 
 const TEMPLATES: Template[] = [
+  {name: 'Billing Issue', url: '/billing'},
+  {name: 'Port Forwarding', url: '/portforwarding'},
+  {name: 'Retention', url: '/retention'},
   {name: 'Security', url: '/security'},
   {name: 'Technical Issues', url: '/technical'},
+  {name: 'Upgrade/Downgrade', url: '/upgradedowngrade'},
   {name: 'Voice Features', url: '/voicefeatures'},
-
 ];
 
 @Component({

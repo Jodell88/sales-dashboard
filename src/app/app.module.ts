@@ -19,6 +19,10 @@ import { PackageDataService } from './package-data.service';
 import { MyDateAdapter } from './customdateadapter';
 import { CspFormComponent } from './csp-form/csp-form.component';
 import { VoiceFeaturesComponent } from './voice-features/voice-features.component';
+import { PortForwardingComponent } from './port-forwarding/port-forwarding.component';
+import { BillingComponent } from './billing/billing.component';
+import { RetentionComponent } from './retention/retention.component';
+import { UpgradeDowngradeComponent } from './upgrade-downgrade/upgrade-downgrade.component';
 
 
 @NgModule({
@@ -28,7 +32,11 @@ import { VoiceFeaturesComponent } from './voice-features/voice-features.componen
     HomeComponent,
     SecurityFormComponent,
     CspFormComponent,
-    VoiceFeaturesComponent
+    VoiceFeaturesComponent,
+    PortForwardingComponent,
+    BillingComponent,
+    RetentionComponent,
+    UpgradeDowngradeComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +77,22 @@ import { VoiceFeaturesComponent } from './voice-features/voice-features.componen
       {
         path: 'voicefeatures',
         component: VoiceFeaturesComponent
+      },
+      {
+        path: 'portforwarding',
+        component: PortForwardingComponent
+      },
+      {
+        path: 'retention',
+        component: RetentionComponent
+      },
+      {
+        path: 'billing',
+        component: BillingComponent
+      },
+      {
+        path: 'upgradedowngrade',
+        component: UpgradeDowngradeComponent
       },
     ]),
   ],
