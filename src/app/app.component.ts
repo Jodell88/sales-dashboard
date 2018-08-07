@@ -7,6 +7,7 @@ export class Template {
 
 const TEMPLATES: Template[] = [
   {name: 'Billing Issue', url: '/billing'},
+  {name: 'Mobile', url: '/mobile'},
   {name: 'Port Forwarding', url: '/portforwarding'},
   {name: 'Retention', url: '/retention'},
   {name: 'Security', url: '/security'},

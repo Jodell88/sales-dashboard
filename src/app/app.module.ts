@@ -23,6 +23,7 @@ import { PortForwardingComponent } from './port-forwarding/port-forwarding.compo
 import { BillingComponent } from './billing/billing.component';
 import { RetentionComponent } from './retention/retention.component';
 import { UpgradeDowngradeComponent } from './upgrade-downgrade/upgrade-downgrade.component';
+import { MobileFormComponent } from './mobile-form/mobile-form.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { UpgradeDowngradeComponent } from './upgrade-downgrade/upgrade-downgrade
     PortForwardingComponent,
     BillingComponent,
     RetentionComponent,
-    UpgradeDowngradeComponent
+    UpgradeDowngradeComponent,
+    MobileFormComponent
   ],
   imports: [
     BrowserModule,
@@ -93,6 +95,10 @@ import { UpgradeDowngradeComponent } from './upgrade-downgrade/upgrade-downgrade
       {
         path: 'upgradedowngrade',
         component: UpgradeDowngradeComponent
+      },
+      {
+        path: 'mobile',
+        component: MobileFormComponent
       },
     ]),
   ],
