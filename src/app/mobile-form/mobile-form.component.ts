@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-export class Mobile {
+export class MobileModel {
   constructor(
     public date?: string,
     public agent?: string,
@@ -20,6 +20,7 @@ export class Mobile {
     public subscriptionLevel?: string,
     public imei?: string,
     public imsi?: string,
+    public contract?: string,
   ) {}
 }
 
@@ -29,6 +30,14 @@ export class Mobile {
   styleUrls: ['./mobile-form.component.css']
 })
 export class MobileFormComponent implements OnInit {
+
+  title = 'Mobile';
+
+  model = new MobileModel();
+
+  reset() {
+    this.model = new MobileModel();
+  }
 
   constructor() { }
 

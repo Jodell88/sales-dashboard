@@ -1,3 +1,158 @@
-<p>
-  mobile-form works!
-</p>
+<headerbar>
+  <span title>{{title}}</span>
+</headerbar>
+<br>
+<div fxLayout="row">
+  <div fxFlexOffset="5%" fxFlex="45%">
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input matInput [(ngModel)]="model.date" name="currentdate" [matDatepicker]="currentDatepicker" placeholder="Date">
+          <mat-datepicker-toggle matSuffix [for]="currentDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #currentDatepicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.agent" name="agentName" matInput placeholder="Agent">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.type" name="type" matInput placeholder="Type">
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.crm" name="crm" matInput placeholder="CRM Number">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.custName" name="custName" matInput placeholder="Customer's Name">
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.id" name="id" matInput placeholder="ID Card / Driver's Permit / Passport">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.fu" name="fu" matInput placeholder="Full Installation / Upgrade">
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.mobileNumber" name="mobileNumber" matInput placeholder="Mobile Number">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.balance" name="balance" matInput placeholder="Balance">
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.mobilePlan" name="mobilePlan" matInput placeholder="Mobile Plan">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.handset" name="handset" matInput placeholder="Handset">
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.handsetType" name="handsetType" matInput placeholder="Handset Type">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.simSwap" name="simSwap" matInput placeholder="SIM Swap">
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.accountLevel" name="accountLevel" matInput placeholder="Account Level">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+        <div fxFlex="49%">
+          <mat-form-field class="mobile-full-width">
+            <input [(ngModel)]="model.subscriberLevel" name="subscriberLevel" matInput placeholder="Subscriber Level">
+          </mat-form-field>
+        </div>
+        <div fxFlexOffset="2%" fxFlex="49%">
+          <mat-form-field class="mobile-full-width">
+            <input [(ngModel)]="model.subscriptionLevel" name="subscriptionLevel" matInput placeholder="Subscription Level">
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+          <div fxFlex="49%">
+            <mat-form-field class="mobile-full-width">
+              <input [(ngModel)]="model.imei" name="imei" matInput placeholder="IMEI">
+            </mat-form-field>
+          </div>
+          <div fxFlexOffset="2%" fxFlex="49%">
+            <mat-form-field class="mobile-full-width">
+              <input [(ngModel)]="model.imsi" name="imsi" matInput placeholder="IMSI">
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div fxFlex="49%">
+            <mat-form-field class="mobile-full-width">
+              <input [(ngModel)]="model.contract" name="contract" matInput placeholder="Contract">
+            </mat-form-field>
+          </div>
+        </div>
+
+  </div>
+  <div fxFlexOffset="5%" fxFlex="44%">
+    <mat-card>
+      <mat-card-title>{{title}} Template Preview</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="mobile-full-width">
+          <textarea #mobile matInput matTextareaAutosize readonly>Date: {{model.date | date: 'mediumDate'}}  
+Agent: {{model.agent}}  
+Type: {{model.type}}
+CRM: {{model.crm}}
+Customer's Name: {{model.custName}}
+ID Card / Driver's Permit / Passport : {{model.id}}
+Full Installation / Upgrade: {{model.fu}}
+Mobile Number: {{model.mobileNumber}}
+Balance: {{model.balance}}
+Mobile Plan: {{model.mobilePlan}}
+Handset: {{model.handset}}
+Handset Type: {{model.handsetType}}
+SIM Swap: {{model.simSwap}}
+Account Level: {{model.accountLevel}}
+Subscriber Level: {{model.subscriberLevel}}
+Subscription Level: {{model.subscriptionLevel}}
+IMEI: {{model.imei}}
+IMSI: {{model.imsi}}
+Contract: {{model.contract}}</textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [ngxClipboard]='mobile'>COPY</button>
+        <button mat-button (click)='reset()'>CLEAR</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
