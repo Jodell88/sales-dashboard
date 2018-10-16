@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, NgSelectOption } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -24,6 +24,7 @@ import { BillingComponent } from './billing/billing.component';
 import { RetentionComponent } from './retention/retention.component';
 import { UpgradeDowngradeComponent } from './upgrade-downgrade/upgrade-downgrade.component';
 import { MobileFormComponent } from './mobile-form/mobile-form.component';
+import { TtarpComponent } from './ttarp/ttarp.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MobileFormComponent } from './mobile-form/mobile-form.component';
     BillingComponent,
     RetentionComponent,
     UpgradeDowngradeComponent,
-    MobileFormComponent
+    MobileFormComponent,
+    TtarpComponent
   ],
   imports: [
     BrowserModule,
@@ -100,9 +102,14 @@ import { MobileFormComponent } from './mobile-form/mobile-form.component';
         path: 'mobile',
         component: MobileFormComponent
       },
+      {
+        path: 'ttarp',
+        component: TtarpComponent
+      },
     ]),
   ],
   providers: [
+    {provide: LOCALE_ID, useValue: 'en-GB'},
     {provide: DateAdapter, useClass: MyDateAdapter},
     BillingCycleService,
     PackageDataService

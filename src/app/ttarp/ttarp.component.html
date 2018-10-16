@@ -1,0 +1,70 @@
+<headerbar>
+  <span title>{{title}}</span>
+</headerbar>
+<br>
+<div fxLayout="row">
+  <div fxFlexOffset="5%" fxFlex="45%">
+      <mat-tab-group dynamicHeight="true">
+          <mat-tab label="Template">
+              <div fxLayout="row">
+                  <div fxFlex="49%">
+                    <mat-form-field class="ttarp-full-width">
+                      <input matInput [(ngModel)]="model.date" name="currentdate" [matDatepicker]="currentDatepicker" placeholder="Current Date">
+                      <mat-datepicker-toggle matSuffix [for]="currentDatepicker"></mat-datepicker-toggle>
+                      <mat-datepicker #currentDatepicker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div fxFlexOffset="2%" fxFlex="49%">
+                    <mat-form-field class="ttarp-full-width">
+                      <input [(ngModel)]="model.agent" name="agent" matInput placeholder="Agent" >
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                    <div fxFlex="49%">
+                      <mat-form-field class="ttarp-full-width">
+                        <input matInput [(ngModel)]="model.expiration" name="expirationdate" [matDatepicker]="expirationDatepicker" placeholder="Expiration Date">
+                        <mat-datepicker-toggle matSuffix [for]="expirationDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #expirationDatepicker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                    <div fxFlexOffset="2%" fxFlex="49%">
+                      <mat-form-field class="ttarp-full-width">
+                        <input [(ngModel)]="model.card" name="card" matInput placeholder="TTARP Card" >
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div fxLayout="row">
+                      <div fxFlex="49%">
+                          <mat-form-field class="ttarp-full-width">
+                              <input [(ngModel)]="model.discount" name="discount" matInput placeholder="Discount" >
+                            </mat-form-field>
+                            </div>
+                            </div>
+            </mat-tab>
+            <mat-tab label="Information">
+                <p>Case Title: TTARP</p>
+                <p>Case Type: TTARP</p>                   
+                <p>Assign to: Sales Admin</p>
+            </mat-tab>
+      </mat-tab-group>
+  </div>
+  <div fxFlexOffset="5%" fxFlex="44%">
+      <mat-card>
+        <mat-card-title>{{title}} Template Preview</mat-card-title>
+        <mat-card-content>
+          <mat-form-field class="ttarp-full-width">
+            <textarea #ttarp matInput matTextareaAutosize readonly>Date: {{model.date | date: 'mediumDate'}}  
+Agent: {{model.agent}}  
+TTARP Card: {{model.card}}
+Expiration Date: {{model.expiration | date: 'mediumDate'}}
+Discount: {{model.discount}}</textarea>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button [ngxClipboard]='ttarp'>COPY</button>
+          <button mat-button (click)='reset()'>CLEAR</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
