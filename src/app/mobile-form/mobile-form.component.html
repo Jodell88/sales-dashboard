@@ -7,7 +7,7 @@
     <div fxLayout="row">
       <div fxFlex="49%">
         <mat-form-field class="mobile-full-width">
-          <input matInput [(ngModel)]="model.date" name="currentdate" [matDatepicker]="currentDatepicker" placeholder="Date">
+          <input matInput [(ngModel)]="model.date" name="currentdate" [matDatepicker]="currentDatepicker" placeholder="Sale Date">
           <mat-datepicker-toggle matSuffix [for]="currentDatepicker"></mat-datepicker-toggle>
           <mat-datepicker #currentDatepicker></mat-datepicker>
         </mat-form-field>
@@ -21,7 +21,7 @@
     <div fxLayout="row">
       <div fxFlex="49%">
         <mat-form-field class="mobile-full-width">
-          <input [(ngModel)]="model.type" name="type" matInput placeholder="Type">
+          <input [(ngModel)]="model.type" name="type" matInput placeholder="Transaction Type">
         </mat-form-field>
       </div>
       <div fxFlexOffset="2%" fxFlex="49%">
@@ -62,7 +62,7 @@
       </div>
       <div fxFlexOffset="2%" fxFlex="49%">
         <mat-form-field class="mobile-full-width">
-          <input [(ngModel)]="model.mobilePlan" name="mobilePlan" matInput placeholder="Mobile Plan">
+          <input [(ngModel)]="model.mobilePlan" name="mobileplan" matInput placeholder="Mobile Plan">
         </mat-form-field>
       </div>
     </div>
@@ -91,46 +91,54 @@
       </div>
     </div>
     <div fxLayout="row">
-        <div fxFlex="49%">
-          <mat-form-field class="mobile-full-width">
-            <input [(ngModel)]="model.subscriberLevel" name="subscriberLevel" matInput placeholder="Subscriber Level">
-          </mat-form-field>
-        </div>
-        <div fxFlexOffset="2%" fxFlex="49%">
-          <mat-form-field class="mobile-full-width">
-            <input [(ngModel)]="model.subscriptionLevel" name="subscriptionLevel" matInput placeholder="Subscription Level">
-          </mat-form-field>
-        </div>
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.subscriberLevel" name="subscriberLevel" matInput placeholder="Subscriber Level">
+        </mat-form-field>
       </div>
-      <div fxLayout="row">
-          <div fxFlex="49%">
-            <mat-form-field class="mobile-full-width">
-              <input [(ngModel)]="model.imei" name="imei" matInput placeholder="IMEI">
-            </mat-form-field>
-          </div>
-          <div fxFlexOffset="2%" fxFlex="49%">
-            <mat-form-field class="mobile-full-width">
-              <input [(ngModel)]="model.imsi" name="imsi" matInput placeholder="IMSI">
-            </mat-form-field>
-          </div>
-        </div>
-        <div fxLayout="row">
-          <div fxFlex="49%">
-            <mat-form-field class="mobile-full-width">
-              <input [(ngModel)]="model.contract" name="contract" matInput placeholder="Contract">
-            </mat-form-field>
-          </div>
-        </div>
-
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.cycle" name="cycle" matInput placeholder="Mobile Billing Cycle">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.imei" name="imei" matInput placeholder="IMEI">
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.sim" name="sim" matInput placeholder="SIM">
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input [(ngModel)]="model.contract" name="contract" matInput placeholder="Contract">
+        </mat-form-field>
+      </div>
+      <div fxFlexOffset="2%" fxFlex="49%">
+        <mat-form-field class="mobile-full-width">
+          <input matInput [(ngModel)]="model.schedule" name="scheduledate" [matDatepicker]="scheduleDatepicker"
+            placeholder="Schedule Date">
+          <mat-datepicker-toggle matSuffix [for]="scheduleDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #scheduleDatepicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
   </div>
   <div fxFlexOffset="5%" fxFlex="44%">
     <mat-card>
       <mat-card-title>{{title}} Template Preview</mat-card-title>
       <mat-card-content>
         <mat-form-field class="mobile-full-width">
-          <textarea #mobile matInput matTextareaAutosize readonly>Date: {{model.date | date: 'mediumDate'}}  
+          <textarea #mobile matInput matTextareaAutosize readonly>Schedule Date: {{model.schedule | date: 'mediumDate'}}
+Sale Date: {{model.date | date: 'mediumDate'}}  
 Agent: {{model.agent}}  
-Type: {{model.type}}
+Transaction Type: {{model.type}}
 CRM: {{model.crm}}
 Customer's Name: {{model.custName}}
 ID Card / Driver's Permit / Passport : {{model.id}}
@@ -143,9 +151,9 @@ Handset Type: {{model.handsetType}}
 SIM Swap: {{model.simSwap}}
 Account Level: {{model.accountLevel}}
 Subscriber Level: {{model.subscriberLevel}}
-Subscription Level: {{model.subscriptionLevel}}
+Mobile Billing Cycle: {{model.cycle}}
 IMEI: {{model.imei}}
-IMSI: {{model.imsi}}
+SIM: {{model.sim}}
 Contract: {{model.contract}}</textarea>
         </mat-form-field>
       </mat-card-content>

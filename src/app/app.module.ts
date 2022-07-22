@@ -25,6 +25,11 @@ import { RetentionComponent } from './retention/retention.component';
 import { UpgradeDowngradeComponent } from './upgrade-downgrade/upgrade-downgrade.component';
 import { MobileFormComponent } from './mobile-form/mobile-form.component';
 import { TtarpComponent } from './ttarp/ttarp.component';
+import { CopperMigrationComponent } from './copper-migration/copper-migration.component';
+import { NoemailComponent } from './noemail/noemail.component';
+import { PricesmartComponent } from './pricesmart/pricesmart.component';
+import { CustomerReferalComponent } from './customer-referal/customer-referal.component';
+import { EmployeeReferalComponent } from './employee-referal/employee-referal.component';
 
 
 @NgModule({
@@ -40,7 +45,12 @@ import { TtarpComponent } from './ttarp/ttarp.component';
     RetentionComponent,
     UpgradeDowngradeComponent,
     MobileFormComponent,
-    TtarpComponent
+    TtarpComponent,
+    CopperMigrationComponent,
+    NoemailComponent,
+    PricesmartComponent,
+    CustomerReferalComponent,
+    EmployeeReferalComponent
   ],
   imports: [
     BrowserModule,
@@ -105,6 +115,26 @@ import { TtarpComponent } from './ttarp/ttarp.component';
       {
         path: 'ttarp',
         component: TtarpComponent
+      },
+      {
+        path: 'coppermigration',
+        component: CopperMigrationComponent
+      },
+      {
+        path: 'noemail',
+        component: NoemailComponent
+      },
+      {
+        path: 'pricesmart',
+        component: PricesmartComponent
+      },
+      {
+        path: 'referralcustomer',
+        component: CustomerReferalComponent
+      },
+      {
+        path: 'referralemployee',
+        component: EmployeeReferalComponent
       },
     ]),
   ],

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class MobileModel {
   constructor(
+    public schedule?: string,
     public date?: string,
     public agent?: string,
     public type?: string,
@@ -17,9 +18,9 @@ export class MobileModel {
     public simSwap?: string,
     public accountLevel?: string,
     public subscriberLevel?: string,
-    public subscriptionLevel?: string,
+    public cycle?: string,
     public imei?: string,
-    public imsi?: string,
+    public sim?: string,
     public contract?: string,
   ) {}
 }
@@ -34,6 +35,28 @@ export class MobileFormComponent implements OnInit {
   title = 'Mobile';
 
   model = new MobileModel();
+
+  transaction = [
+    { value: 'Post to Post' },
+    { value: 'Pre to Post' },
+    { value: 'Port In' },
+    { value: 'New Post' }
+  ];
+
+  mobilePlans = [
+    { value: 'Everything LTE 199' },
+    { value: 'Unlimited 349' },
+    { value: 'Everything LTE PRE. 599' }
+  ];
+
+  installUpgrade = [
+    { value: 'New Sale' },
+    { value: 'Opt In' },
+    { value: 'IPTV/Mobile' },
+    { value: 'Voice/Mobile' },
+    { value: 'STB/Mobile' },
+    { value: 'Secure/Mobile' },
+  ];
 
   reset() {
     this.model = new MobileModel();

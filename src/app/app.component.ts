@@ -7,8 +7,13 @@ export class Template {
 
 const TEMPLATES: Template[] = [
   {name: 'Billing Issue', url: '/billing'},
+  {name: 'Copper Migration', url: 'coppermigration'},
   {name: 'Mobile', url: '/mobile'},
+  {name: 'No E-mail', url: '/noemail'},
   {name: 'Port Forwarding', url: '/portforwarding'},
+  {name: 'Pricesmart', url: '/pricesmart'},
+  {name: 'Referral Customer', url: '/referralcustomer'},
+  {name: 'Referral Employee', url: '/referralemployee'},
   {name: 'Retention', url: '/retention'},
   {name: 'Security', url: '/security'},
   {name: 'Technical Issues', url: '/technical'},

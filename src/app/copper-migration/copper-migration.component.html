@@ -1,0 +1,58 @@
+<headerbar>
+  <span title>{{title}}</span>
+</headerbar>
+<br>
+<div fxLayout="row">
+<div fxFlexOffset="5%" fxFlex="45%">
+  <mat-tab-group dynamicHeight="true">
+    <mat-tab label="Template">
+      <br>
+      <div fxLayout="row">
+        <div fxFlex="49%">
+          <mat-form-field class="copper-full-width">
+            <input [(ngModel)]="model.area" name="area" matInput placeholder="Area" >
+          </mat-form-field>
+        </div>
+        <div fxFlexOffset="2%" fxFlex="49%">
+          <mat-form-field class="copper-full-width">
+            <input [(ngModel)]="model.exchange" name="exchange" matInput placeholder="Exchange" >
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="49%">
+          <mat-form-field class="copper-full-width">
+              <input [(ngModel)]="model.number" name="number" matInput placeholder="Telephone Number" >
+            </mat-form-field>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Information">
+        <div class="copper-tab-content">
+            <p>Case Title: C2FEOC</p>
+            <p>Case Type: Fiber Migration</p>                   
+            <p>Assign to: Voice Admin</p>
+          </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div fxFlexOffset="5%" fxFlex="44%">
+    <mat-card>
+      <mat-card-title>{{title}} Template Preview</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="copper-full-width">
+          <textarea #copper matInput matTextareaAutosize readonly>Copper to Fiber Migration
+
+Area: {{model.area}}
+Exchange: {{model.exchange}}
+Telephone Number: {{model.number}}
+          </textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [ngxClipboard]='copper'>COPY</button>
+        <button mat-button (click)="reset()">CLEAR</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

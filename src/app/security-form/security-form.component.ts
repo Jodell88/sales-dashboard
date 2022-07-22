@@ -15,7 +15,12 @@ export class Security{
     public product?: string,
     public installDetails?: string,
     public coordinates?: string,
-    public cycle?: string
+    public cycle?: string,
+    public birthDate?: string,
+    public issueDate?: string,
+    public expiryDate?: string,
+    public occupation?: string,
+    public employer?: string
   ) {}
 }
 

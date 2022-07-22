@@ -95,13 +95,21 @@ export class PackageDataService {
     {name: "Voice Personality package with Return call", price: 19 * this.VAT, interval: "Month", description: "Package with 4 features of Return call, Call waiting, 3 way calling and Speed calling (8)"},
     {name: "Voice Conference package with Caller ID", price: 19 * this.VAT, interval: "Month", description: "Package with 4 features of Caller ID, Call waiting, 3 way calling and Call forwarding"},
     {name: "Voice Conference package with Return Call", price: 18 * this.VAT, interval: "Month", description: "Package with 4 features of Return call, Call waiting, 3 way calling and Call forwarding"},  
-  ]
+  ];
 
 SECURE = [
-  {name: "Silver"},
-  {name: "Silver with Rapid Response"},
-  {name: "Gold"},
-  {name: "Gold with Rapid Response"},
-]
+  {name: 'Secure Pro (1 year Contract)'},
+  {name: 'Secure Pro (2 year Contract)'},
+  {name: 'Secure Pro (3 year Contract)'},
+  {name: 'Secure Pro Rapid Response (1 year Contract)'},
+  {name: 'Secure Pro Rapid Response (2 year Contract)'},
+  {name: 'Secure Pro Rapid Response (3 year Contract)'},
+  {name: 'Secure Advance (1 year Contract)'},
+  {name: 'Secure Advance (2 year Contract)'},
+  {name: 'Secure Advance (3 year Contract)'},
+  {name: 'Secure Advance Rapid Response (1 year Contract)'},
+  {name: 'Secure Advance Rapid Response (2 year Contract)'},
+  {name: 'Secure Advance Rapid Response (3 year Contract)'},
+];
 
 }

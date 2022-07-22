@@ -1,0 +1,88 @@
+<headerbar>
+  <span title>{{title}}</span>
+</headerbar>
+<br>
+<div fxLayout="row">
+<div fxFlexOffset="5%" fxFlex="45%">
+  <mat-tab-group dynamicHeight="true">
+    <mat-tab label="Template">
+      <br>
+      <div fxLayout="row">
+        <div fxFlex="49%">
+          <mat-form-field class="noemail-full-width">
+            <input matInput [(ngModel)]="model.date" name="currentdate" [matDatepicker]="currentDatepicker" placeholder="Date of Sale">
+            <mat-datepicker-toggle matSuffix [for]="currentDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #currentDatepicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div fxFlexOffset="2%" fxFlex="49%">
+          <mat-form-field class="noemail-full-width">
+            <input [(ngModel)]="model.name" name="name" matInput placeholder="Field Agent Name (for FSA requests)" >
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="100%">
+          <mat-form-field class="noemail-full-width">
+            <textarea matInput matTextareaAutosize [(ngModel)]="model.issue" name="issue" placeholder="Details of issue"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Information">
+        <div class="noemail-tab-content">
+          <p>Step 1 – Sales Agent MUST complete a thorough verification to ensure that the customer is 
+            legitimately unable to provide a valid email address.</p>
+          <p>Step 2 – If after this thorough verification, the agent is still unable to secure an email
+             address, the Email Address Field must be updated with no@email in place of an email address. 
+             Validation must not be launched by the agent.</p>          
+          <p>Step 3 - The issue must be escalated to their supervisor via the following case template for review and approval:</p>
+
+          <h3>No Email Case Titles</h3>
+          
+          <p>NO EMAIL:ELDR – Customer is Elderly, does not have email address<br>
+          
+          NO EMAIL:DISA – Customer is disabled (deaf etc)<br>
+          
+          NO EMAIL:NACC – No access to internet.<br>
+          
+          NO EMAIL:DECL – Customer declined to set up email address<br>
+          
+          NO EMAIL:NTEC – Customer unable to operate technical device.</p>
+          
+          <p>It is critical that the case titles are updated exactly as it is represented in the above table for effective tracking and reporting purposes.</p>
+
+          <p>Case Type – Contact<br>
+          Description – Date of Sale<br>
+          Field Agent Name (for FSA requests)<br>
+          Details of issue e.g Elderly couple without close relatives who never had an email address and refuses to have one.</p>
+
+          <p>Step 4 – Case is assigned to Sales Admin.</p>
+
+          <p>Step 5 – The Supervisor verifies the legitimacy of the case before pursuing validation from Finance (Billing) on the agent’s behalf. 
+            Only Supervisors are permitted to Launch Validation on these accounts at this point.</p>
+          <p>Our usual financial validation process and turnaround time will take effect thereafter.</p>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div fxFlexOffset="5%" fxFlex="44%">
+    <mat-card>
+      <mat-card-title>{{title}} Template Preview</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="noemail-full-width">
+          <textarea #noemail matInput matTextareaAutosize readonly>Date of Sale: {{model.date | date: 'mediumDate'}}
+
+Field Agent Name: {{model.name}}
+
+Details of issue: {{model.issue}}
+          </textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [ngxClipboard]='noemail'>COPY</button>
+        <button mat-button (click)="reset()">CLEAR</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

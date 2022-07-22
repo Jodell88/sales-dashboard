@@ -60,14 +60,49 @@
         <div fxLayout="row">
           <div fxFlex="49%">
             <mat-form-field class="security-full-width">
-              <mat-select [(ngModel)]="model.product" name="product" placeholder="Product">
-                <mat-option *ngFor="let product of products" [value]="product.name">{{ product.name }}</mat-option>
-              </mat-select>
+              <input [(ngModel)]="model.product" name="product" matInput placeholder="Product">
             </mat-form-field>
           </div>
           <div fxFlexOffset="2%" fxFlex="49%">
             <mat-form-field class="security-full-width">
               <input [(ngModel)]="model.coordinates" name="gps" matInput placeholder="GPS Coordinates" >
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div fxFlex="49%">
+            <mat-form-field class="security-full-width">
+              <input matInput [(ngModel)]="model.birthDate" name="birthDate" [matDatepicker]="birthDatepicker" placeholder="Date of Birth">
+              <mat-datepicker-toggle matSuffix [for]="birthDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #birthDatepicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div fxFlex="49%">
+            <mat-form-field class="security-full-width">
+              <input matInput [(ngModel)]="model.issueDate" name="issueDate" [matDatepicker]="issueDatepicker" placeholder="Date of Issue">
+              <mat-datepicker-toggle matSuffix [for]="issueDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #issueDatepicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div fxFlexOffset="2%" fxFlex="49%">
+            <mat-form-field class="security-full-width">
+              <input matInput [(ngModel)]="model.expiryDate" name="expiryDate" [matDatepicker]="expiryDatepicker" placeholder="Date of Expiry">
+              <mat-datepicker-toggle matSuffix [for]="expiryDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #expiryDatepicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div fxFlex="49%">
+            <mat-form-field class="security-full-width">
+                <input [(ngModel)]="model.employer" name="employer" matInput placeholder="Name of Employer" >
+              </mat-form-field>
+          </div>
+          <div fxFlexOffset="2%" fxFlex="49%">
+            <mat-form-field class="security-full-width">
+              <input [(ngModel)]="model.occupation" name="occupation" matInput placeholder="Occupation" >
             </mat-form-field>
           </div>
         </div>
@@ -102,17 +137,27 @@
           <mat-form-field class="security-full-width">
             <textarea #security matInput matTextareaAutosize readonly>Date Stamp: {{model.date | date: 'mediumDate'}}
 
-CRM #: {{model.account}}
+CRM Number: {{model.account}}
                   
 Customer Name: {{model.name}}
                   
 Address: {{model.address}}
                   
-ID #: {{model.id}}
+ID Number: {{model.id}}
+
+Date of Birth: {{model.birthDate | date: 'mediumDate'}}
+
+Date of Issue: {{model.issueDate | date: 'mediumDate'}}
+
+Date of Expiry: {{model.expiryDate | date: 'mediumDate'}}
+
+Occupation: {{model.occupation}}
+
+Name of Employer: {{model.employer}}
                   
 Primary Contact Name: {{model.contactname}}
                   
-Primary Contact #: {{model.primaryContact}}
+Primary Contact Number: {{model.primaryContact}}
   
 Contact: {{model.secondaryContact}}
   

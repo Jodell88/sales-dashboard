@@ -1,0 +1,85 @@
+<headerbar>
+  <span title>{{title}}</span>
+</headerbar>
+<br>
+<div fxLayout="row">
+<div fxFlexOffset="5%" fxFlex="45%">
+  <mat-tab-group dynamicHeight="true">
+    <mat-tab label="Template">
+      <br>
+      <div fxLayout="row">
+        <div fxFlex="49%">
+          <mat-form-field class="custref-full-width">
+            <input matInput [(ngModel)]="model.date" name="currentdate" [matDatepicker]="currentDatepicker" placeholder="Date of Sale">
+            <mat-datepicker-toggle matSuffix [for]="currentDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #currentDatepicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div fxFlexOffset="2%" fxFlex="49%">
+          <mat-form-field class="custref-full-width">
+            <input [(ngModel)]="model.refName" name="refName" matInput placeholder="Referral Name (New sign up)" >
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="49%">
+          <mat-form-field class="custref-full-width">
+            <input [(ngModel)]="model.crm" name="crm" matInput placeholder="CRM Number" >
+          </mat-form-field>
+        </div>
+        <div fxFlexOffset="2%" fxFlex="49%">
+          <mat-form-field class="custref-full-width">
+            <input [(ngModel)]="model.contact" name="contact" matInput placeholder="Contact Number" >
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="49%">
+          <mat-form-field class="custref-full-width">
+            <input [(ngModel)]="model.refBy" name="refBy" matInput placeholder="Referred by (existing customer)" >
+          </mat-form-field>
+        </div>
+        <div fxFlexOffset="2%" fxFlex="49%">
+          <mat-form-field class="custref-full-width">
+            <input [(ngModel)]="model.refContact" name="refContact" matInput placeholder="Referred by Mobile Contact Number" >
+          </mat-form-field>
+        </div>
+      </div>
+    <!-- </div> -->
+    </mat-tab>
+    <mat-tab label="Information">
+        <div class="custref-tab-content">
+          <p>Case Title: $100 Referral | "new sign up name as seen on CRM"</p>
+          <p>Case Type: Employee Referral Credit</p>
+        </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<div fxFlexOffset="5%" fxFlex="44%">
+    <mat-card>
+      <mat-card-title>{{title}} Template Preview</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="custref-full-width">
+          <textarea #empref matInput matTextareaAutosize readonly>Date of Sale: {{model.date | date: 'mediumDate'}}
+
+Referral Name (new sign up): {{model.refName}}
+
+CRM Number: {{model.crm}}
+
+Contact Number: {{model.contact}}
+
+
+Referred by (Employee / Tech): {{model.refBy}}
+
+Referred by Mobile Contact Number: {{model.refContact}}
+          </textarea>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [ngxClipboard]='empref'>COPY</button>
+        <button mat-button (click)="reset()">CLEAR</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
